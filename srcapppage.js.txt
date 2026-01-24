@@ -1,0 +1,210 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { ArrowLeft, CheckCircle2, MapPin, Phone, Mail } from 'lucide-react';
+
+// הגדרת אנימציות עדינות לכניסה שקטה
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, ease: "easeOut" }
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+export default function Home() {
+  return (
+    <main className="min-h-screen selection:bg-brand-terracotta selection:text-white">
+      
+      {/* Navbar */}
+      <nav className="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100/50">
+        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+          <div className="flex flex-col justify-center">
+            <span className="text-xl font-serif tracking-widest text-brand-navy font-bold leading-none">MICHAL SIMON</span>
+            <span className="text-xs tracking-[0.2em] text-brand-terracotta mt-1">ADVOCATE</span>
+          </div>
+          
+          <div className="hidden md:flex gap-10 text-sm font-medium text-brand-navy/80">
+            <a href="#about" className="hover:text-brand-terracotta transition-colors duration-300">אודות</a>
+            <a href="#services" className="hover:text-brand-terracotta transition-colors duration-300">תחומי עיסוק</a>
+            <a href="#contact" className="hover:text-brand-terracotta transition-colors duration-300">צור קשר</a>
+          </div>
+
+          <button className="hidden md:block border border-brand-navy text-brand-navy px-8 py-2 text-sm hover:bg-brand-navy hover:text-white transition-all duration-300">
+            תיאום פגישה
+          </button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center pt-24 bg-gradient-to-br from-white to-brand-offwhite">
+        <div className="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-16 items-center">
+          
+          {/* Text Side */}
+          <motion.div 
+            initial="initial"
+            animate="animate"
+            variants={stagger}
+            className="space-y-10 z-10"
+          >
+            <motion.div variants={fadeInUp} className="w-20 h-[2px] bg-brand-terracotta"></motion.div>
+            
+            <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-serif text-brand-navy leading-[0.9]">
+              CLARITY <br/>
+              BUILDS <br/>
+              <span className="text-brand-terracotta italic">QUIET</span> <br/>
+              CONFIDENCE.
+            </motion.h1>
+            
+            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-gray-600 max-w-md leading-relaxed font-light">
+              השפה המשפטית שלנו נבנתה כדי לשדר ביטחון ומקצועיות, 
+              לצד אנושיות ונגישות בתהליכי נדל"ן מורכבים.
+            </motion.p>
+
+            <motion.div variants={fadeInUp} className="pt-4">
+              <a href="#contact" className="group inline-flex items-center gap-4 text-brand-navy font-medium border-b border-brand-navy pb-2 hover:text-brand-terracotta hover:border-brand-terracotta transition-all">
+                התחילו את התהליך בביטחון
+                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform duration-300" />
+              </a>
+            </motion.div>
+          </motion.div>
+
+          {/* Image/Abstract Side */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative h-[600px] hidden md:block"
+          >
+             <div className="absolute inset-0 bg-brand-navy/5"></div>
+             {/* כאן אפשר להוסיף תמונה אדריכלית בעתיד */}
+             <div className="w-full h-full border border-brand-navy/10 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute -right-20 -top-20 w-96 h-96 bg-brand-terracotta/5 rounded-full blur-3xl"></div>
+                <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-brand-navy/5 rounded-full blur-3xl"></div>
+                <span className="font-serif text-4xl text-brand-navy/10 tracking-widest rotate-90">EST. 2024</span>
+             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Values Section - The 3 Circles */}
+      <section id="about" className="py-32 bg-brand-navy text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-3 gap-16 text-center">
+            
+            <motion.div whileHover={{ y: -5 }} className="group">
+              <div className="w-24 h-24 rounded-full border border-brand-terracotta/30 mx-auto mb-8 flex items-center justify-center group-hover:border-brand-terracotta transition-colors">
+                <span className="text-3xl">🤝</span>
+              </div>
+              <h3 className="text-2xl font-serif text-brand-terracotta mb-4">ליווי אנושי</h3>
+              <p className="text-white/70 font-light leading-relaxed px-4">
+                המותג נבנה מתוך רצון להפוך תהליך מורכב לחוויה נעימה. יחס אישי והקשבה הם הבסיס לכל תיק.
+              </p>
+            </motion.div>
+
+            <motion.div whileHover={{ y: -5 }} className="group">
+              <div className="w-24 h-24 rounded-full border border-brand-terracotta/30 mx-auto mb-8 flex items-center justify-center group-hover:border-brand-terracotta transition-colors">
+                <span className="text-3xl">👁️</span>
+              </div>
+              <h3 className="text-2xl font-serif text-brand-terracotta mb-4">בהירות</h3>
+              <p className="text-white/70 font-light leading-relaxed px-4">
+                שקיפות מלאה, סדר וניקיון. המקום שמאפשר לכתוב ולחשוב בנחת, ללא אותיות קטנות מוסתרות.
+              </p>
+            </motion.div>
+
+            <motion.div whileHover={{ y: -5 }} className="group">
+              <div className="w-24 h-24 rounded-full border border-brand-terracotta/30 mx-auto mb-8 flex items-center justify-center group-hover:border-brand-terracotta transition-colors">
+                <span className="text-3xl">🛡️</span>
+              </div>
+              <h3 className="text-2xl font-serif text-brand-terracotta mb-4">ביטחון</h3>
+              <p className="text-white/70 font-light leading-relaxed px-4">
+                יציבות, סמכות ומקצועיות שקטה. אנו כאן כדי להעניק לך את השקט הנפשי בעסקה החשובה שלך.
+              </p>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-32 bg-brand-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 border-b border-gray-100 pb-10">
+            <div>
+              <span className="text-brand-terracotta font-medium tracking-widest text-sm uppercase">תחומי עיסוק</span>
+              <h2 className="text-5xl font-serif text-brand-navy mt-4">נדל"ן ומקרקעין</h2>
+            </div>
+            <p className="text-gray-500 max-w-md mt-6 md:mt-0">
+              ליווי משפטי מקיף בתהליכי רכישה, מכירה והשקעה, תוך שימת דגש על הפרטים הקטנים ביותר.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100 border border-gray-100">
+            {[
+              "ייצוג במכירת דירות יד שנייה",
+              "ייצוג ברכישת דירה מקבלן",
+              "ליווי משקיעים ועסקאות מורכבות",
+              "רישום בתים משותפים",
+              "העברות זכויות ותכנון מס",
+              "הסכמי שיתוף במקרקעין"
+            ].map((service, index) => (
+              <div key={index} className="bg-white p-12 hover:bg-brand-offwhite transition-colors duration-300 group">
+                <CheckCircle2 className="w-6 h-6 text-brand-terracotta mb-6 opacity-50 group-hover:opacity-100 transition-opacity" />
+                <h3 className="text-xl font-medium text-brand-navy">{service}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <footer id="contact" className="bg-brand-navy text-white pt-24 pb-12 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 mb-20">
+          
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-5xl font-serif mb-2 tracking-wide">MICHAL SIMON</h2>
+              <span className="text-brand-terracotta tracking-[0.3em] text-sm">ADVOCATE & NOTARY</span>
+            </div>
+            <p className="text-white/60 text-xl font-light leading-relaxed max-w-md">
+              אנחנו מזמינים אתכם ליצור קשר ולהפוך את התהליך המשפטי לחוויה בטוחה, ברורה ונעימה.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-10 font-light self-end">
+            <div className="space-y-2">
+               <span className="text-xs text-brand-terracotta uppercase tracking-wider">כתובת</span>
+               <div className="flex items-start gap-3 text-white/90">
+                 <MapPin className="w-5 h-5 mt-1 shrink-0 opacity-50" />
+                 <span>רח' רבי יצחק נפחא 28,<br/>בית שמש</span>
+               </div>
+            </div>
+
+            <div className="space-y-2">
+               <span className="text-xs text-brand-terracotta uppercase tracking-wider">צור קשר</span>
+               <div className="flex items-center gap-3 text-white/90">
+                 <Phone className="w-5 h-5 opacity-50" />
+                 <span dir="ltr">054.7850.530</span>
+               </div>
+               <div className="flex items-center gap-3 text-white/90">
+                 <Mail className="w-5 h-5 opacity-50" />
+                 <span>michal@michalsimonlaw.com</span>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-white/20">
+          <p>© 2024 Michal Simon Law. All rights reserved.</p>
+          <p className="font-serif tracking-widest mt-2 md:mt-0">CLARITY BUILDS QUIET CONFIDENCE</p>
+        </div>
+      </footer>
+    </main>
+  );
+}
