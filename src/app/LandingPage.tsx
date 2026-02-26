@@ -969,8 +969,8 @@ export default function MichalSimonLanding() {
         aria-label="שלחו הודעת וואטסאפ"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3 }}
         style={{ position: "fixed", bottom: 24, left: 24, zIndex: 100, width: 46, height: 46, borderRadius: 8, background: "rgba(11,26,47,0.8)", backdropFilter: "blur(12px)", color: `${t.white}70`, display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none", border: `1px solid ${t.white}10`, transition: "all 0.3s", fontSize: 11, fontWeight: 500 }}
-        onMouseOver={(e: any) => { e.currentTarget.style.background = "#25D366"; e.currentTarget.style.color = t.white; e.currentTarget.style.borderColor = "#25D366" }}
-        onMouseOut={(e: any) => { e.currentTarget.style.background = "rgba(11,26,47,0.8)"; e.currentTarget.style.color = `${t.white}70`; e.currentTarget.style.borderColor = `${t.white}10` }}
+        onMouseOver={(e: React.MouseEvent<HTMLAnchorElement>) => { (e.currentTarget as HTMLAnchorElement).style.background = "#25D366"; (e.currentTarget as HTMLAnchorElement).style.color = t.white; (e.currentTarget as HTMLAnchorElement).style.borderColor = "#25D366" }}
+        onMouseOut={(e: React.MouseEvent<HTMLAnchorElement>) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(11,26,47,0.8)"; (e.currentTarget as HTMLAnchorElement).style.color = `${t.white}70`; (e.currentTarget as HTMLAnchorElement).style.borderColor = `${t.white}10` }}
       >WA</motion.a>
     </div>
   )
