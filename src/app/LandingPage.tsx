@@ -517,7 +517,7 @@ export default function MichalSimonLanding() {
 
       {/* ═══════ FIXED BACKGROUND ═══════ */}
       <div style={{ position: "fixed", inset: 0, zIndex: 0 }}>
-        <img src="/images/bg.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
+        <img src="/images/bg.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
         <div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, transparent 0%, transparent 30%, rgba(11,26,47,0.15) 50%, rgba(11,26,47,0.35) 70%, rgba(11,26,47,0.5) 100%)` }} />
       </div>
 
@@ -555,7 +555,7 @@ export default function MichalSimonLanding() {
          ═══════════════════════════════════════════════ */}
       <section ref={heroRef} id="hero" style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden", zIndex: 1 }}>
         <motion.div style={{ scale: heroScale, position: "absolute", inset: 0, zIndex: 0 }}>
-          <img src="/images/bg.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <img src="/images/bg.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </motion.div>
 
         {/* Particles */}
